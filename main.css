@@ -1,0 +1,260 @@
+svg {
+    overflow: visible;
+}
+
+.parameters {
+    cursor: pointer;
+    background: #ddf;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+}
+
+#container {
+    position: relative;
+    width: 960px;
+    height: 480px;
+    margin: 0 auto;
+    top: 10px;
+    z-index: 10;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+}
+
+canvas {
+        background-color: black;
+        width: 960px;
+        height: 480px;
+        border-radius: 10px;
+      }
+
+#text {
+    width: 960px;
+    margin: 0 auto;
+    margin-bottom: 0px;
+}
+
+#sliders {
+    position: absolute;
+    width: 300px;
+    height:120px;
+    bottom: 20px;
+    right: 10px;
+    background: transparent;
+    opacity: 1;
+}
+
+.sliders {
+    position: absolute;
+    width: 120px;
+    height: 20px;
+    background: white;
+    border-color: blue;
+    border-width: 3px;
+    opacity: 1;
+    left: 70px;
+}
+
+#insolation {
+    top: 0px;
+}
+
+#albedo {
+    top: 50px;
+}
+
+#co2 {
+    top: 100px;
+}
+
+.canvas-text {
+    position: absolute;
+    color:white;
+    text-align:left;
+    font-size:14pt;
+}
+
+#temperature {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: transparent;
+    opacity: 1;
+}
+
+#degC {
+    position: absolute;
+    bottom: 80px;
+    left: 10px;
+    background: transparent;
+    opacity: 1;
+}
+
+#chart {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+}
+
+#checkboxes {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 200px;
+    height: 100px;
+    background: transparent;
+}
+
+#key {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    width: 200px;
+    height: 100px;
+    background: transparent;
+}
+
+#y-label {
+    top: 130px;
+    right: 0px;
+}
+
+#x-label-1 {
+    bottom: 10px;
+    left: 22px;
+}
+
+#x-label-2 {
+    bottom: 10px;
+    left: 59px;
+}
+
+#title {
+    top: 0px;
+    left: 0px;
+}
+
+#insolation-label {
+    top: 0px;
+    left: 20px;
+}
+
+#albedo-label {
+    top: 53px;
+    left: 20px;
+}
+
+#co2-label {
+    top: 105px;
+    left: 20px;
+}
+
+#insolation-value {
+    top: 0px;
+    left: 220px;
+}
+
+#albedo-value {
+    top: 50px;
+    left: 220px;
+}
+
+#co2-value {
+    top: 100px;
+    left: 220px;
+}
+
+#shells {
+    position: absolute;
+    top: 85px;
+    left: 325px;
+    width: 310px;
+    height: 310;
+    background: transparent;
+}
+
+#globe {
+    position: absolute;
+    top: 85px;
+    left: 325px;
+    width: 310px;
+    height: 310px;
+    background: transparent;
+}
+
+.datedisplay .on {
+    fill: white;
+    opacity: 1;
+}
+
+.datedisplay .off {
+    fill: white;
+    opacity: .2;
+}
+
+.chart text {
+  fill: lightgrey;
+  font: 14px sans-serif;
+  stroke: lightgrey;
+  text-anchor: middle;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.left_col {
+    float: left;
+    width: 450px;
+}
+
+.right_col {
+    float: right;
+    width: 450px;
+}
+
+.clear {
+    clear: both;
+}
+
+.firstcharacter {
+    float: left; 
+    color: #903;
+    width: 35px;
+    line-height: 60px;
+    padding: 0px 4px 8px 3px;
+    font-family: Georgia; 
+    font-size: 60px; /* 75 */
+}
+
+input[type="range"]{
+    margin-top: 10px;
+    background: #aaa;
+    width: 130px;
+    height: 6px;
+    -webkit-appearance: none;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -wekkit-border-radius: 8px;
+    -webkit-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.9), 0px 1px 1px 0px rgba(255, 255, 255, 0.13);
+    -moz-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.9), 0px 1px 1px 0px rgba(255, 255, 255, 0.13);
+    box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.9), 0px 1px 1px 0px rgba(255, 255, 255, 0.13);
+}
+
+#series {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 550px;
+    padding: 20px;
+    background: #ffe;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+}

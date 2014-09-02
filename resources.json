@@ -1,0 +1,7 @@
+[
+    "http://puzlet.org/puzlet/js/d3.min.js",
+    "https://api.github.com/repos/metormote/iopctrl/contents/iopctrl.js",
+    "main.html",
+    "main.css",
+    "main.coffee"
+]

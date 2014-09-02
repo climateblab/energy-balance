@@ -1,0 +1,205 @@
+<div id="text">
+
+  <h2>Energy balance: the simplest climate model</h2>
+
+  <div class="left_col">
+
+    <span class="firstcharacter">1</span>
+    <span class="pz_text" ref="sunlight_note">Sunlight</span> streams
+    towards a cold, dark Earth
+    (-273<span class="deg"></span>C <span class="equals"></span>
+    0 <span class="deg"></span>K); its energy is completely
+    absorbed. As the Earth warms
+    <span class="pz_text" ref="blackbody_note">it radiates in the
+    infrared</span>. Eventually the radiated energy matches that
+    received from the Sun:
+    <span class="pz_text" ref="energybalance_note">energy balance</span>
+    <span id="params1" class="parameters">click to reset</span>.
+
+</div>
+
+  <div class="pz_note" id="sunlight_note">
+
+    The Sun's [http://en.wikipedia.org/wiki/Intensity_(physics),
+    intensity] at the upper atmosphere is $S_0 \approx 1366$
+    W/m<sup>2</sup>. Roughly, over the area presented to the Sun, more
+    energy is delivered in one hour than the world uses in one year.
+    (See this [http://en.wikipedia.org/wiki/Solar_energy, wikipedia
+    article].)
+
+  </div>
+
+  <div class="pz_note" id="blackbody_note">
+
+    It acts as a [http://en.wikipedia.org/wiki/Black-body_radiation,
+    black body].  The surface temperature is shown in degrees Celsius
+    and illustrated by a colored ring.
+
+  </div>
+
+  <div class="pz_note" id="energybalance_note">
+
+    The key equation is
+
+    $$
+    \small 
+    C \frac{dT_s}{dt} = \frac{S_0}{4}(1-\rho) -\sigma (1-\epsilon/2) T_s^4
+    $$
+
+    Here $T_s$ is the temperature at the Earth's surface, $C$ is the
+    [http://en.wikipedia.org/wiki/Heat_capacity,heat capacity], $\rho$
+    is the fraction of sunlight that is reflected
+    ([http://en.wikipedia.org/wiki/Albedo,albedo] or reflection
+    coefficient), $\sigma$ is the
+    [http://en.wikipedia.org/wiki/Stefan-Boltzmann_constant,
+    Stefan-Boltzmann constant] and $\epsilon$ is the fraction of the
+    radiation emitted from the Earth that is absorbed by the
+    atmosphere.
+
+    Further details can be found in
+    [http://www.climatemodellingprimer.net,A Climate Modelling Primer]
+    and this [http://en.wikipedia.org/wiki/Idealized_greenhouse_model,
+    wikipedia article].
+
+  </div>
+
+
+  <div class="right_col">
+
+    <span class="firstcharacter">2</span>
+
+    About 30<span class="percent"></span> of the sunlight is reflected
+    ($\rho=0.3$) and does not warm the Earth
+    <span id="params2a" class="parameters">click to see</span>.  A new
+    energy balance is struck, and the Earth is inhospitably cold.  To
+    warm the Earth we need the help of the atmosphere---the
+    [http://en.wikipedia.org/wiki/Greenhouse_effect, green house
+    effect].
+
+  </div>
+
+  <div class="clear"></div>
+
+  <div id="container">
+ 
+    <div id="photons"></div>
+    <canvas></canvas>
+    <div id="sliders">
+      <input type="range" id="insolation" class="sliders" step="1" min="0" max="1600" value="1366">
+      <input type="range" id="albedo" class="sliders" step="0.01" min="0" max="1" value="0.3">
+      <input type="range" id="co2" class="sliders" step="0.01" min="0" max="1" value="0.78">
+      <div id = "insolation-label" class="canvas-text">$S_0$</div>
+      <div id = "albedo-label" class="canvas-text">$\rho$</div>
+      <div id = "co2-label" class="canvas-text">$\varepsilon$</div>
+      <div id = "insolation-value" class="canvas-text">$S_0$</div>
+      <div id = "albedo-value" class="canvas-text">$\rho$</div>
+      <div id = "co2-value" class="canvas-text">$\varepsilon$</div>
+    </div>
+    <div id="chart">
+      <div id = "title" class="canvas-text" title="Sunlight averaged
+      over Earth's surface." style="color:grey">Energy Balance</div>
+      <div id = "y-label" class="canvas-text">W/m<sup>2</sup></div>
+      <div id = "x-label-1" class="canvas-text">In</div>
+      <div id = "x-label-2" class="canvas-text">Out</div>
+    </div>
+    <div id="checkboxes" class="canvas-text">
+      <span style="color:grey">Sources:</span><br>
+      <div id="key">
+        <svg width="200" height="100">
+          <rect x="42" y="32" width="10" height="10"
+        style="fill:rgb(255,255,0);stroke-width:1;stroke:rgb(255,255,0)"/>
+	  <rect x="60" y="32" width="10" height="10"
+        style="fill:rgb(0,0,255);stroke-width:1;stroke:rgb(0,0,255)"/>
+	  <rect x="56" y="56" width="10" height="10"
+        style="fill:rgb(255,0,0);stroke-width:1;stroke:rgb(255,0,0)"/> 
+	  <rect x="122" y="80" width="10" height="10"
+        style="fill:rgb(0,255,0);stroke-width:1;stroke:rgb(0,255,0)"/>
+        </svg>
+      </div>
+      <input type="checkbox" id="sunOn" value="showSunPhotons" checked="checked">Sun<br>
+      <input type="checkbox" id="earthOn" value="showSunPhotons" checked="checked">Earth<br>
+      <input type="checkbox" id="atmosOn" value="showSunPhotons" checked="checked">Atmosphere<br>
+    </div>
+    <div id="shells"></div>
+    <div id="globe"></div>
+    <div id="temperature"></div>
+    <div id="degC" style="color:grey">Earth temp (deg.C)</div>
+    <div>__Best viewed with Chrome or Safari.__</div>
+    
+  </div>
+
+  <div class="clear" style="margin-bottom: 45px;"></div>
+
+  <div class="left_col">
+
+    <span class="firstcharacter">3</span>
+    Historically, the 
+    <span class="pz_text" ref="atmos_note">atmosphere</span> absorbed
+    about 78<span class="percent"></span> of the Earth's radiation
+    ($\epsilon=0.78$)
+    <span id="params3" class="parameters">click to see</span>.  As the
+    atmosphere warms it also radiates---upwards and downwards in equal
+    measure. The additional downwards radiation heats the Earth: the
+    greenhouse effect.
+
+  </div>
+
+  <div class="pz_note" id="atmos_note">
+
+    The atmosphere is considered to be concentrated in a single layer
+    (shown as a concentric red ring, with color that varies with
+    temperature).
+
+  </div>
+
+  <div class="right_col">
+
+    <span class="firstcharacter">4</span> Mostly through carbon
+    emissions, we have caused the atmosphere to
+    <span class="pz_text" ref="co2_note">absorb more radiation from
+    the Earth </span> ($\epsilon=0.82$), and therefore to radiate more
+    infrared back towards the surface
+    <span id="params4" class="parameters">click to see</span>.  This
+    increases the surface temperature by about
+    2.5<span class="deg"></span>C.
+    <span class="pz_text" ref="try_note">Things to try.</span>
+    <span id="params4b" class="parameters">click to stop</span>
+
+    <div class="pz_note" id="co2_note">
+
+      Note that $\epsilon=0.82$ includes a contribution to account for
+      aspects that we do not directly consider, such as the effect of
+      increased water vapour.  (See this
+      [http://en.wikipedia.org/wiki/Idealized_greenhouse_model,
+      wikipedia article].)
+
+    </div>
+
+    <div class="pz_note" id="try_note">
+
+      <ul>
+
+      <li>Toggle the photons from Sun, Earth and atmosphere using the
+      checkboxes in the upper left.
+
+      <li>Turn off the Sun (set $S_0=0$ in the slider), and watch the
+      Earth cool.
+
+      <li>Increase the reflection coefficient (albedo) to $\rho=1$,
+      and watch the Earth cool.
+
+      <li>Set $\epsilon=1$, so that *all* the infrared radiated from
+      the earth is absorbed in the atmosphere. What is the effect on
+      surface temperature?
+
+      </ul>
+
+    </div>
+
+  </div>
+
+  <div class="clear"></div>
+
+</div>
+
+
