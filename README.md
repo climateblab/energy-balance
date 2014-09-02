@@ -1,4 +1,1 @@
-energy-balance
-==============
-
-Energy balance: the simplest climate model
+![](https://github.com/climateblab/energy-balance/blob/gh-pages/thumb.png) 
