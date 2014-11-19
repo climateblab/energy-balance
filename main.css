@@ -258,3 +258,6 @@ input[type="range"]{
     border: 1px solid #aaa;
     border-radius: 10px;
 }
+
+.foot .puzlet-link { float:left }
+.foot .org-link { float:right }
